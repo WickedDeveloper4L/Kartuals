@@ -8,7 +8,6 @@ import SignInSignOutPage from './pages/sign-in-and-sign-out/sign-in-and-sign-out
 import { auth, createUserProfileDocument } from './components/firebase/firebase.utils';
 import {connect} from 'react-redux'
 import { setCurrentUser } from './redux/user/user.actions';
-import SignIn from './components/sign-in/SignIn';
 class App extends React.Component {
   unsubscribeFromAuth = null
 
