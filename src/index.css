@@ -1,6 +1,7 @@
 html {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+  user-select: none;
 }
 
 code {
