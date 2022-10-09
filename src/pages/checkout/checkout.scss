@@ -27,6 +27,24 @@
       margin-top: 30px;
       margin-left: auto;
       font-size: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .test-warning{
+        width: 50vw;
+        margin: 0 auto;
+
+
+        .warning{
+          color: rgb(218, 7, 7);
+          font-size: 20px;
+          font-weight: 700;
+          text-align: center;
+        }
+      }
     }
   }
   
