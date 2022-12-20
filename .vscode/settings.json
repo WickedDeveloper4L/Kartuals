@@ -1,3 +1,5 @@
 {
-    "emmet.triggerExpansionOnTab": true
+    "emmet.triggerExpansionOnTab": true,
+    "json.schemaDownload.enable": false,
+    "C_Cpp.inactiveRegionOpacity": 0.55
 }
