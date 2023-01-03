@@ -10,21 +10,14 @@ import { checkUserSession } from './redux/user/user.actions';
 import { connect } from 'react-redux';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
-class App extends React.Component {
-  unsubscribeFromAuth = null
 
-  componentDidMount(){
-     const {checkUserSession} = this.props
 
-     checkUserSession() 
-  }
+const App =({checkUserSession, currentUser})=>{
 
-  componentWillUnmount(){
-    this.unsubscribeFromAuth();
-  }
-    render(){
-      const {currentUser} = this.props
-      
+  React.useEffect(()=>{
+    checkUserSession() 
+  }, [checkUserSession])
+ 
       return(
       <div>
       <Header/>
@@ -37,7 +30,6 @@ class App extends React.Component {
       
       </div>
     )
-    }
   
 }
 

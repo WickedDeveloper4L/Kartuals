@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import FormInput from '../form-input/FormInput';
 import './signIn.scss'
@@ -8,53 +8,50 @@ import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actio
 
 
 
- class SignIn extends Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            email: '',
-            password: ''
-        }
-    }
+ const SignIn=({emailSignInStart, googleSignInStart})=>{
+   const [details, setDetails] = React.useState({
+    email: '',
+    password: ''
+   })
 
-    handleSubmit = async event =>{
+   const {email, password} = details
+
+    const handleSubmit = async event =>{
         event.preventDefault()
-        const {emailSignInStart} = this.props
-        const {email, password} = this.state;
 
         emailSignInStart(email, password)
     }
 
-    handleChange = event =>{
+   const handleChange = event =>{
         const {name, value} = event.target
 
-        this.setState({
+        setDetails({
+            ...details,
             [name]: value
         })
     }
-    
-  render() {
-    const {googleSignInStart} = this.props
+
+   
 
     return (
       <div className='sign-in'>
       <h2>I Already have an Account</h2>
       <span>please input your email and password</span>
 
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={handleSubmit}>
       <FormInput 
       type="email"
-      value={this.state.email} 
+      value={email} 
       required 
-      handleChange={this.handleChange} 
+      handleChange={handleChange} 
       label='email'
       name="email"/>
 
       <FormInput 
       type="password" 
-      value={this.state.password} 
+      value={password} 
       required 
-      handleChange={this.handleChange}
+      handleChange={handleChange}
       label='password' 
       name="password"/>
 
@@ -66,7 +63,6 @@ import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actio
       </form>
       </div>
     )
-  }
 }
 const mapDispatchToProps = dispatch =>({
   googleSignInStart: () => dispatch(googleSignInStart()),

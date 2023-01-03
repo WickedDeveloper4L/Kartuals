@@ -5,22 +5,18 @@ import { connect } from 'react-redux'
 import collectionsOverviewContainer from '../../components/coolection-overview/CollectionsOverviewContainer'
 import collectionContainer from '../collection/collectionContainer'
 
- class Shop extends React.Component {
+ const Shop=({fetchCollectionsStart,match})=>{
   
-  componentDidMount(){
-    const {fetchCollectionsStart} = this.props;
-    fetchCollectionsStart();
+    React.useEffect(()=>{
+      fetchCollectionsStart()
+    },[fetchCollectionsStart])
 
-  }
-  render() {
-    const {match} = this.props;
     return (
       <div className='shop-page'>
         <Route exact path={`${match.path}`} component={collectionsOverviewContainer} />
         <Route path={`${match.path}/:collectionId`} component={collectionContainer}/>
       </div>
     )
-  }
 }
 
 const mapDispatchToProps = dispatch =>({
