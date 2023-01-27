@@ -47,7 +47,7 @@ const SignUp =()=> {
 
         <FormInput type='password' name='confirmPassword' value={confirmPassword} onChange={handlChange} label='Confirm Password' required />
 
-        <CustomButton type='submit'>SIGN UP</CustomButton>
+        <CustomButton  type='submit'>SIGN UP</CustomButton>
         </form>
       </div>
     )

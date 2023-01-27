@@ -14,20 +14,28 @@
     }
   
     .collection-footer {
-      width: 100%;
+      width: 90%;
       height: 5%;
       display: flex;
       justify-content: space-between;
       font-size: 18px;
       padding-bottom: 30px;
       .name {
-        width: 90%;
+        width: 80%;
         margin-bottom: 15px;
       }
   
       .price {
-        width: 10%;
+        width: 20%;
       }
+
+      @media screen and (max-width: 800px){
+        font-size: 13px;
     }
+    }
+
+    @media screen and (max-width: 800px){
+      width: 40vw;
+   }
   }
   

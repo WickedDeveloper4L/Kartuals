@@ -5,6 +5,11 @@
     flex-direction: column;
     align-items: center;
     margin: 50px auto 0;
+
+    @media screen and (max-width: 800px){
+      width: 90%;
+      align-content: center;
+    }
   
     .checkout-header {
       width: 100%;
@@ -16,6 +21,10 @@
       .header-block {
         text-transform: capitalize;
         width: 23%;
+
+        @media screen and (max-width: 800px){
+          font-size: 13px;
+        }
   
         &:last-child {
           width: 8%;
@@ -32,6 +41,13 @@
       align-items: center;
       justify-content: center;
       gap: 1rem;
+
+      @media screen and (max-width: 800px){
+        font-size: 17px;
+        text-align: center;
+        margin-left: 0;
+        
+      }
 
       .test-warning{
         width: 50vw;

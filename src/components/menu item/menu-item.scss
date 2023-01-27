@@ -5,21 +5,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 7.5px 15px;
+    margin: 0 9.5px 25px;
     transition: 300ms ease-out;
     box-shadow: 03px 5px 10px rgba(0, 0, 0, 0.587);
     overflow: hidden;
   
     &:first-child {
-      margin-right: 7.5px;
+      margin-right: 9.5px;
     }
   
     &:last-child {
-      margin-left: 7.5px;
+      margin-left: 9.5px;
     }
 
+   
     &.large{
         height: 380px;
+
+        @media screen and (max-width: 800px){
+          height: 200px;
+       }
     }
     
     &:hover {
@@ -70,4 +75,8 @@
         font-family: 'Open Sans', sans-serif;
       }
     }
+
+    @media screen and (max-width: 800px){
+      height: 200px;
+   }
   }
